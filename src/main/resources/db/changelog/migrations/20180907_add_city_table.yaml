@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: pfonseca
+      changes:
+        - createTable:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+            
+  - changeSet:
+      id: 2
+      author: pfonseca
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: SEQ_CITY
+            startValue: 20

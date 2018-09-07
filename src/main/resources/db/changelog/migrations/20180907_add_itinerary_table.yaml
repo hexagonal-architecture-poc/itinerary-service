@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: pfonseca
+      changes:
+        - createTable:
+            tableName: itinerary
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: origin_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: destiny_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: departure_time
+                  type: time
+                  constraints:
+                    nullable: false
+              - column:
+                  name: arrival_time
+                  type: time
+                  constraints:
+                    nullable: false
+                    
+  - changeSet:
+      id: 2
+      author: pfonseca
+      changes:
+        - createSequence:
+            incrementBy: 1
+            sequenceName: SEQ_ITINERARY
+            startValue: 20
+            
+  - changeSet:
+      id: 3
+      author: pfonseca
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: origin_id
+            baseTableName: itinerary
+            constraintName: fk_origin
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: city
+            
+  - changeSet:
+      id: 4
+      author: pfonseca
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: destiny_id
+            baseTableName: itinerary
+            constraintName: fk_destiny
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: city
+            

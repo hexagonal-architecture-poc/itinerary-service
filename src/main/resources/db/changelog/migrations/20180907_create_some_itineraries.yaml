@@ -1,0 +1,180 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: pfonseca
+      changes:
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: departure_time
+              valueDate: "10:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "11:15:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: departure_time
+              valueDate: "15:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "15:45:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 3
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 3
+          - column:
+              name: departure_time
+              valueDate: "15:05:00"
+          - column:
+              name: arrival_time
+              valueDate: "16:00:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: departure_time
+              valueDate: "18:09:00"
+          - column:
+              name: arrival_time
+              valueDate: "20:10:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 5
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: departure_time
+              valueDate: "12:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "14:30:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 6
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 3
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: departure_time
+              valueDate: "16:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "17:04:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 7
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: departure_time
+              valueDate: "22:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "23:34:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 8
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: departure_time
+              valueDate: "06:10:00"
+          - column:
+              name: arrival_time
+              valueDate: "08:34:00"
+          tableName: itinerary

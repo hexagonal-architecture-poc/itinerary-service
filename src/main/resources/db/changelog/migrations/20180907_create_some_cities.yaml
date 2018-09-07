@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: pfonseca
+      changes:
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 1
+          - column:
+              name: name
+              type: varchar(255)
+              value: "Zaragoza"
+          tableName: city
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 2
+          - column:
+              name: name
+              type: varchar(255)
+              value: "Barcelona"
+          tableName: city
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 3
+          - column:
+              name: name
+              type: varchar(255)
+              value: "Madri"
+          tableName: city
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: name
+              type: varchar(255)
+              value: "Granada"
+          tableName: city
+          

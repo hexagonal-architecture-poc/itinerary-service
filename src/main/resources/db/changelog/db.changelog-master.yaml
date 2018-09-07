@@ -1,1 +1,9 @@
 databaseChangeLog:
+  - include:
+      file: "classpath:db/changelog/migrations/20180907_add_city_table.yaml"
+  - include:
+      file: "classpath:db/changelog/migrations/20180907_add_itinerary_table.yaml"
+  - include:
+      file: "classpath:db/changelog/migrations/20180907_create_some_cities.yaml"
+  - include:
+      file: "classpath:db/changelog/migrations/20180907_create_some_itineraries.yaml"
