@@ -1,6 +1,9 @@
 package com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.filter;
 
+import java.time.LocalTime;
+
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.domain.Itinerary;
 
@@ -8,12 +11,26 @@ public class ItineraryFilter {
 
 	private Long origin;
 	private Long destiny;
+	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	private LocalTime departureAfter;
 
 	public Specification<Itinerary> buildQuery() {
 		return Specification
-				.where(withOriginId(origin))
-					.or(withDestinyId(destiny));
+				.where(withOriginId(origin).or(withDestinyId(destiny)) )
+					.and(afterTime(departureAfter))
+					;
 
+	}
+
+	private Specification<Itinerary> afterTime(LocalTime departure) {
+		return (root, query, cb) -> {
+			
+			if(departure == null)
+				return null;
+			
+			return cb.greaterThanOrEqualTo(root.get("departureTime"), departure);
+		};
 	}
 
 	private Specification<Itinerary> withOriginId(Long originId) {
@@ -50,6 +67,14 @@ public class ItineraryFilter {
 
 	public void setDestiny(Long destiny) {
 		this.destiny = destiny;
+	}
+
+	public LocalTime getDepartureAfter() {
+		return departureAfter;
+	}
+
+	public void setDepartureAfter(LocalTime departureAfter) {
+		this.departureAfter = departureAfter;
 	}
 
 }

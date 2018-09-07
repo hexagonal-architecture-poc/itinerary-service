@@ -103,6 +103,26 @@ public class ItineraryControllerIntegrationTest {
     	.andExpect(jsonPath("$.content", hasSize(equalTo(1))))
     	.andExpect(jsonPath("$.content[0].destiny.name", is(madriCity.getName())));
     }
+    
+    @Test
+    public void givenItineraries_whenGetNoItinerariesUsingDepartureTimeFilter_thenStatus200() throws Exception {
+    	
+    	mvc.perform(get("/itineraries/?departureAfter=23:50:00").contentType(MediaType.APPLICATION_JSON))
+    	.andDo(print())
+    	.andExpect(status().isOk())
+    	.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+    	.andExpect(jsonPath("$.content", hasSize(equalTo(0))));
+    }
+    
+    @Test
+    public void givenItineraries_whenGetItinerariesUsingDepartureTimeFilter_thenStatus200() throws Exception {
+    	
+    	mvc.perform(get("/itineraries/?departureAfter=00:00:00").contentType(MediaType.APPLICATION_JSON))
+    	.andDo(print())
+    	.andExpect(status().isOk())
+    	.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+    	.andExpect(jsonPath("$.content", hasSize(greaterThanOrEqualTo(1))));
+    }
 	
 	
 }
