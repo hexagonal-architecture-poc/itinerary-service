@@ -32,7 +32,10 @@ public class Itinerary {
 	@ManyToOne
 	private City destiny;
 	
+	@NotNull
 	private LocalTime departureTime;
+	
+	@NotNull
 	private LocalTime arrivalTime;
 
 	public Long getId() {
