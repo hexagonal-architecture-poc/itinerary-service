@@ -18,12 +18,12 @@ public class City {
 	@Id
 	@SequenceGenerator(name = "SEQ_CITY", sequenceName = "SEQ_CITY", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CITY")
-	@ApiModelProperty(notes = "The database generated itinerary ID")
+	@ApiModelProperty(notes = "The database generated city ID")
 	private Long id;
 	
 	@NotBlank
 	@Size(max = 255)
-	@ApiModelProperty(notes = "City name", required=true)
+	@ApiModelProperty(notes = "City name", required=true, allowEmptyValue=false, dataType="String(255)")
 	private String name;
 	
 	public City() {}
