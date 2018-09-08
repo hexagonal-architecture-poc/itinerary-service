@@ -17,9 +17,9 @@ public class ItineraryFilter {
 
 	public Specification<Itinerary> buildQuery() {
 		return Specification
-				.where(withOriginId(origin).or(withDestinyId(destiny)) )
-					.and(afterTime(departureAfter))
-					;
+				.where(withOriginId(origin))
+					.and(withDestinyId(destiny))
+					.and(afterTime(departureAfter));
 
 	}
 
@@ -75,6 +75,12 @@ public class ItineraryFilter {
 
 	public void setDepartureAfter(LocalTime departureAfter) {
 		this.departureAfter = departureAfter;
+	}
+
+	@Override
+	public String toString() {
+		return "ItineraryFilter [origin=" + origin + ", destiny=" + destiny + ", departureAfter=" + departureAfter
+				+ "]";
 	}
 
 }
