@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/okto-transportation-management
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+
+
