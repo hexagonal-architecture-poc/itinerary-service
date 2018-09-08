@@ -8,16 +8,22 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "City model")
 public class City {
 
 	@Id
 	@SequenceGenerator(name = "SEQ_CITY", sequenceName = "SEQ_CITY", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CITY")
+	@ApiModelProperty(notes = "The database generated itinerary ID")
 	private Long id;
 	
 	@NotBlank
 	@Size(max = 255)
+	@ApiModelProperty(notes = "City name", required=true)
 	private String name;
 	
 	public City() {}

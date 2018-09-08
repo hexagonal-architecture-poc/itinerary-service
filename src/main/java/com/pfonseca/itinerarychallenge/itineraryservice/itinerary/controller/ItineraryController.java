@@ -13,6 +13,8 @@ import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.fil
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.domain.Itinerary;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.service.ItineraryService;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/itineraries")
 public class ItineraryController {
@@ -23,6 +25,7 @@ public class ItineraryController {
 	private ItineraryService itineraryService;
 	
 	@GetMapping()
+	@ApiOperation(value="Listing itineraries based on a filter")
 	public Page<Itinerary> list(ItineraryFilter filter, Pageable pageable){
 		LOGGER.info("Listing itineraries. Filter: {}", filter);
 		return itineraryService.list(filter, pageable);
