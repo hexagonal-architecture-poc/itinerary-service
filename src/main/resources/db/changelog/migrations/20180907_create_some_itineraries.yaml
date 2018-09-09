@@ -66,7 +66,7 @@ databaseChangeLog:
               valueDate: "15:05:00"
           - column:
               name: arrival_time
-              valueDate: "16:00:00"
+              valueDate: "22:00:00"
           tableName: itinerary
           
       - insert:
@@ -154,7 +154,7 @@ databaseChangeLog:
               valueDate: "22:10:00"
           - column:
               name: arrival_time
-              valueDate: "23:34:00"
+              valueDate: "23:14:00"
           tableName: itinerary
           
       - insert:
@@ -177,4 +177,26 @@ databaseChangeLog:
           - column:
               name: arrival_time
               valueDate: "08:34:00"
+          tableName: itinerary
+          
+      - insert:
+          columns:
+          - column:
+              name: id
+              type: int
+              valueNumeric: 9
+          - column:
+              name: origin_id
+              type: int
+              valueNumeric: 4
+          - column:
+              name: destiny_id
+              type: int
+              valueNumeric: 3
+          - column:
+              name: departure_time
+              valueDate: "23:20:00"
+          - column:
+              name: arrival_time
+              valueDate: "23:50:00"
           tableName: itinerary
