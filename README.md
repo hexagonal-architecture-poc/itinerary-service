@@ -36,7 +36,7 @@ The api documentation (Swagger): [http://localhost:8080/swagger-ui.html](http://
 ---
 ## Frameworks
 
-- **SpringBoot(2.0):** Spring Boot makes it easy to create stand-alone.
+- **SpringBoot(2.0):** Spring Boot makes it easy to create stand-alone applications. The Spring container provides an implementation for IoC supporting Dependency Injection.
 - **SpringBoot Actuator:** SpringBoot’s Actuator which provides production ready features to help you monitor and manage your application.
 	- This solution uses the health endpoint to check if the application is ready when deploying on kubernetes. (readinessProbe and livenessProbe)
 - **Spring Data:** It makes it easy for the programming model for data access.
