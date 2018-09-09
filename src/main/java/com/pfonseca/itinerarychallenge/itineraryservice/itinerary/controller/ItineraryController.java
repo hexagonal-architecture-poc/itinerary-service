@@ -43,9 +43,9 @@ public class ItineraryController {
 	@GetMapping()
 	@ApiOperation(value="Listing itineraries based on a filter")
 	@ApiImplicitParams({
-	    @ApiImplicitParam(name = "destiny", value = "Destiny city id", required = false, dataType = "long", paramType = "destiny"),
-	    @ApiImplicitParam(name = "origin", value = "Origin city id", required = false, dataType = "long", paramType = "origin"),
-	    @ApiImplicitParam(name = "departureAfter", value = "Departure after. (format: 'HH:mm:ss')", required = false, dataType = "string", paramType = "departureAfter")
+	    @ApiImplicitParam(name = "destiny", value = "Destiny city id", required = false),
+	    @ApiImplicitParam(name = "origin", value = "Origin city id", required = false),
+	    @ApiImplicitParam(name = "departureAfter", value = "Departure after. (format: 'HH:mm:ss')", required = false)
 	})
 	@ApiResponses(value = {
 	        @ApiResponse(code = 200, message = "Successfully retrieved list"),
