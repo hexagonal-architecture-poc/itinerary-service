@@ -3,6 +3,7 @@
 This microservice is responsible for data related to cities and itineraries (city, destiny city, departure time, arrival time) saved in a relational database. 
 
 [Pipeline](https://gitlab.com/itinerary-challenge/itinerary-service/pipelines)
+
 [Pipeline Documentation](https://gitlab.com/itinerary-challenge/itinerary-service/blob/master/docs/pipeline.md)
 
 [Docker Registry](https://gitlab.com/itinerary-challenge/itinerary-service/container_registry)
