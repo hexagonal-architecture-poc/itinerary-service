@@ -3,6 +3,7 @@ package com.pfonseca.itinerarychallenge.itineraryservice.itinerary.domain;
 import java.time.LocalTime;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,8 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.pfonseca.itinerarychallenge.itineraryservice.city.domain.City;
 
 import io.swagger.annotations.ApiModel;
@@ -18,6 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @ApiModel(description = "Itinerary between two cities")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Itinerary {
 
 	@Id
@@ -28,22 +32,24 @@ public class Itinerary {
 	
 	@Valid
 	@NotNull
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	@ApiModelProperty(notes = "Origin city", required=true)
 	private City origin;
 	
 	@Valid
 	@NotNull
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	@ApiModelProperty(notes = "Destiny city", required=true)
 	private City destiny;
 	
 	@NotNull
 	@ApiModelProperty(notes = "Departure time. Format: \"HH:mm:ss\"", required=true)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 	private LocalTime departureTime;
 	
 	@NotNull
 	@ApiModelProperty(notes = "Arrival time. Format: \"HH:mm:ss\"", required=true)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 	private LocalTime arrivalTime;
 
 	public Long getId() {
