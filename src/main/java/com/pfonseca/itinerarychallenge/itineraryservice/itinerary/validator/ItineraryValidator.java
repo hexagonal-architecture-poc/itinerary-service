@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pfonseca.itinerarychallenge.itineraryservice.city.domain.City;
-import com.pfonseca.itinerarychallenge.itineraryservice.city.service.CityService;
+import com.pfonseca.itinerarychallenge.itineraryservice.city.application.service.CityService;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.exception.DepartureTimeAfterArrivalTimeException;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.exception.DestinyCityNotFoundException;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.exception.OriginAndDestinyCitiesAreTheSameException;

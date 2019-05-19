@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.pfonseca.itinerarychallenge.itineraryservice.city.adapter.persistence.CityRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.pfonseca.itinerarychallenge.itineraryservice.ItineraryServiceApplication;
 import com.pfonseca.itinerarychallenge.itineraryservice.city.domain.City;
-import com.pfonseca.itinerarychallenge.itineraryservice.city.repository.CityRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = ItineraryServiceApplication.class)

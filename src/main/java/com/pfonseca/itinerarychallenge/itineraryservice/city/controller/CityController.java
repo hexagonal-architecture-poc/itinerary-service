@@ -1,7 +1,6 @@
 package com.pfonseca.itinerarychallenge.itineraryservice.city.controller;
 
-import java.util.Optional;
-
+import com.pfonseca.itinerarychallenge.itineraryservice.city.application.port.in.CityUseCase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pfonseca.itinerarychallenge.itineraryservice.city.controller.exception.CityNotFoundException;
 import com.pfonseca.itinerarychallenge.itineraryservice.city.domain.City;
-import com.pfonseca.itinerarychallenge.itineraryservice.city.service.CityService;
 
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -29,7 +25,7 @@ public class CityController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CityController.class);
 
 	@Autowired
-	private CityService cityService;
+	private CityUseCase cityUseCase;
 	
 	@GetMapping
 	@ApiOperation(value="Listing cities")
@@ -39,7 +35,7 @@ public class CityController {
 	)
 	public Page<City> list(Pageable pageable){
 		LOGGER.info("Listing cities.");
-		return cityService.list(pageable);
+		return cityUseCase.list(pageable);
 	}
 	
 	@GetMapping("/{id}")
@@ -51,8 +47,9 @@ public class CityController {
 	)
 	public City getById(@PathVariable Long id) {
 		LOGGER.info("get city by id. id: {}", id);
-		Optional<City> city = cityService.getById(id);
-		return city.orElseThrow(CityNotFoundException::new);
+		return cityUseCase
+				.getById(id)
+				.orElseThrow(CityNotFoundException::new);
 	}
 	
 }

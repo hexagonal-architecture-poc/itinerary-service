@@ -1,4 +1,4 @@
-package com.pfonseca.itinerarychallenge.itineraryservice.itinerary.service;
+package com.pfonseca.itinerarychallenge.itineraryservice.itinerary.application.service;
 
 import java.util.Optional;
 

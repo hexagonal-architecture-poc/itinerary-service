@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.exception.ItineraryNotFoundException;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.controller.filter.ItineraryFilter;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.domain.Itinerary;
-import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.service.ItineraryService;
+import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.application.service.ItineraryService;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

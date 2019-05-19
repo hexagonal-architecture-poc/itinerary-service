@@ -15,6 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.time.LocalTime;
 
+import com.pfonseca.itinerarychallenge.itineraryservice.city.adapter.persistence.CityRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pfonseca.itinerarychallenge.itineraryservice.ItineraryServiceApplication;
 import com.pfonseca.itinerarychallenge.itineraryservice.city.domain.City;
-import com.pfonseca.itinerarychallenge.itineraryservice.city.repository.CityRepository;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.domain.Itinerary;
 import com.pfonseca.itinerarychallenge.itineraryservice.itinerary.repository.ItineraryRepository;
 
